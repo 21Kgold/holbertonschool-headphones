@@ -1,0 +1,1 @@
+Implement a fully functional web page from a designer figma file, that includes accesability and responsive characteristics.
