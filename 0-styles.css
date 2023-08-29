@@ -402,9 +402,10 @@ div:has(input[type="checkbox"]:checked) ~ nav {
 
 /* Banner
   ============================= */
-section.banner {
+.banner {
     padding: 0 1.25rem 6.6rem 1.25rem;
     background-color: transparent;
+    min-width: 357px;
 }
 
 .banner h2 {
