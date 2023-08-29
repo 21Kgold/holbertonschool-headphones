@@ -352,8 +352,9 @@ div:has(input[type="checkbox"]:checked) ~ nav {
 @media only screen and (min-width: 768px) {
     body {
         background-image: url(./images/headphones_hero_1_j5ha93_c_scale\,w_1400.jpg);
-        height: 730px;
-        max-width: 1000px;
+        height: 1130px;
+        top: -400px;
+        
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -367,6 +368,9 @@ div:has(input[type="checkbox"]:checked) ~ nav {
     }
 
     .header {
+        max-width: 62.5rem;
+        margin-left: auto;
+        margin-right: auto;
         padding-bottom: 20rem;
     }
 
@@ -432,13 +436,19 @@ section.banner {
 
 @media only screen and (min-width: 768px) {
     .banner {
-        margin: 0 11.4rem;
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .banner a {
         margin-top: 2.25rem;
     }
 }
+
+/* SEVICES
+  ============================= */
+
 
 
   
