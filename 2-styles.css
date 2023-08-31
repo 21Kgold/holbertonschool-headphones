@@ -447,51 +447,51 @@ div:has(input[type="checkbox"]:checked) ~ nav {
     }
 }
 
-/* SEVICES
+/* SERVICES
   ============================= */
-.services {
-    padding: 6.9rem 1.5rem;
+.layout1 {
+    padding: 6.9rem 1.85rem;
     min-width: 23rem;
 }
 
-.services h2 {
+.layout1 h2 {
     margin: 0;
 }
 
-.services p {
+.layout1 p {
     margin: 2.5rem 0 7rem 0;
 }
 
-.services h3 {
+.layout1 h3 {
     margin: 1.rem 0 0.6rem 0;
 
 }
 
-.services h5 {
+.layout1 h5 {
     margin: 0;
 }
 
-.services .container {
+.layout1 .container {
     row-gap: 6rem;
     justify-content: center;
 }
 
-.services .container img {
+.layout1 .container img {
     height: 4.8rem;
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
 
-    .services {
+    .layout1 {
         padding-top: 6.9rem;
         padding-bottom: 6.9rem;
     }
 
-    section.services p {
+    section.layout1 p {
         margin-bottom: 6rem;
     }
 
-    .services .container {
+    .layout1 .container {
         flex-direction: row;
         flex-wrap: wrap;
         min-width: 27rem;
@@ -500,8 +500,7 @@ div:has(input[type="checkbox"]:checked) ~ nav {
         margin-right: auto;
     }
 
-    .services .container div {
-        width: 50%;
+    .layout1 .container div {
         margin: 0;
         padding: 0;
     }
@@ -509,7 +508,7 @@ div:has(input[type="checkbox"]:checked) ~ nav {
 
 @media only screen and (min-width:768px) {
 
-    .services .container {
+    .layout1 .container {
         flex-direction: row;
         flex-wrap: wrap;
         max-width: 1000px;
@@ -517,16 +516,62 @@ div:has(input[type="checkbox"]:checked) ~ nav {
         margin-right: auto;
     }
 
-    .services .container div {
+    .layout1 .container div {
         margin: 0;
         padding: 0;
         width: 25%;
     }
 
-    .services p {
+    .layout1 p {
         max-width: 1000px;
         min-width: 637px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+/* RESULTS
+  ============================= */
+.results.layout1 {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    background-image: url(./images/headphones_hero_2.jpg);
+    background-repeat: no-repeat;
+}
+
+.results.layout1 p {
+    margin: 3rem auto 5rem auto;
+}
+
+.results.layout1 .container {
+    row-gap: 3rem;
+}
+
+.results.layout1 .container div {
+    height: 11rem;
+    width: 11rem;
+    background-image: url(./images/pentagone.png);
+    background-repeat: no-repeat;
+    background-size: 11rem 11rem;
+}
+
+.results.layout1 .container h1 {
+    margin-top: 3.8rem;
+    margin-bottom: .5rem;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    .results.layout1 .container {
+        max-width: 470px;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+
+    .results.layout1 .container {
+        justify-content: space-between;
+      
     }
 }
