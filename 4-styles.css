@@ -1,0 +1,660 @@
+/* SUMMARY
+1. BASELINE
+2. LAYOUT
+3. SECTION
+4. CARD
+*/
+
+
+/** 1. BASELINE
+    Reset
+    Colors variables
+    Font styles
+    Themes
+    Links and buttons
+    Flexbox containers - items
+    Logo
+**/
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+html {line-height:1.15;-webkit-text-size-adjust:100%}
+body{margin:0}
+main{display:block}
+h1{font-size:2em;margin:.67em 0}
+hr{box-sizing:content-box;height:0;overflow:visible}
+pre{font-family:monospace,monospace;font-size:1em}
+a{background-color:transparent}
+abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
+b,strong{font-weight:bolder}
+code,kbd,samp{font-family:monospace,monospace;font-size:1em}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sub{bottom:-.25em}
+sup{top:-.5em}
+img{border-style:none}
+button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}
+button,input{overflow:visible}
+button,select{text-transform:none}
+[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}
+[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}
+[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}
+fieldset{padding:.35em .75em .625em}
+legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}
+progress{vertical-align:baseline}
+textarea{overflow:auto}
+[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px}
+[type=search]::-webkit-search-decoration{-webkit-appearance:none}
+::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
+details{display:block}
+summary{display:list-item}
+template{display:none}
+[hidden]{display:none}
+
+/* Import local files font */
+@font-face {
+    font-family: Spincycle;
+    src: url(./Fonts/spincycle_ot.otf);
+} /* Logo font */
+
+/* Variables */
+:root {
+    --primaryColor2: hsla(0, 100%, 70%, 1);
+    --surfaceColor2: hsla(0, 0%, 100%, 1);    
+    --onPrimaryColor2: hsla(0, 0%, 100%, 1);
+    --onSurfaceColor2: hsla(214, 71%, 9%, 1);
+
+    --primaryColor1: hsla(0, 100%, 70%, 1);
+    --surfaceColor1: hsla(214, 71%, 9%, 1);
+    --onPrimaryColor1: hsla(0, 0%, 100%, 1);
+    --onSurfaceColor1: hsla(0, 0%, 100%, 1);
+
+    --backgroundColor: hsla(0 0% 95% 1);
+    
+    /* Source Sans 3, Previously Source San Pro upgraded accordingly with Google Fonts */
+    --font-family-base: 'Source Sans 3', sans-serif;
+    --font-family-logo: Spincycle;
+
+    --font-regular: 400;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    --font-xsmall: 0.75rem;
+    --font-small: 0.875rem;
+    --font-medium: 1rem;
+    --font-large: 1.125rem;
+    --font-xlarge: 2rem;
+    --font-xxlarge: 2.875rem;
+
+    --font-large-line: 1.625rem;
+
+    --header-padding: 1.8rem 0 13.5rem 0;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box; /* Overwrite the content-box value, so size will include margin and padding */
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;  /* Base font size */
+}
+
+body {
+    background-color: var(--backgroundColor);
+    font-family: var(--font-family-base);
+    text-align: center;
+    background-image: url(./images/headphones_hero_1_j5ha93_ar_1_1\,c_fill\,g_auto__c_scale\,w_767.jpg);
+    height: 869px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: border-box;
+}
+
+/* Two color-theme styles */
+.theme1 {
+    color: var(--onPrimaryColor1);
+    background-color: var(--surfaceColor1);
+}
+
+.theme2 {
+    color: var(--onSurfaceColor2);
+    background-color: var(--surfaceColor2);
+}
+
+/* Seven font styles */
+
+p {
+    font-size: var(--font-medium);
+    font-weight: var(--font-regular);
+    line-height: var(--font-large-line);
+}
+
+h1 {
+    font-size: var(--font-xxlarge);
+    font-weight: var(--font-bold);
+}
+
+h2 {
+    font-size: var(--font-xlarge);
+    font-weight: var(--font-semibold);
+}
+
+h3 {
+    font-size: var(--font-large);
+    font-weight: var(--font-semibold);
+}
+
+h4 {
+    font-size: var(--font-medium);
+    font-weight: var(--font-bold);
+}
+
+h5 {
+    font-size: var(--font-small);
+    font-weight: var(--font-regular);
+    line-height: var(--font-large-line);
+}
+
+h6 {
+    font-size: var(--font-xsmall);
+    font-weight: var(--font-regular);
+}
+
+/* Layout */
+
+.content {
+    min-width: 23rem;      /*   REVISAR     REVISAR     REVISAR */
+}
+
+/* Flexbox dafault style: column + space-between */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+.container div {
+    width: 12.9rem;         /* Biggest width of (mobile viewport) flex items */
+    margin: 0 auto;
+}
+
+.container.row {            /* Modify to Flexbox: row */
+    flex-direction: row;
+}
+
+/* One button type */
+.btn:link, .btn:visited {   /*Unvisited and visited*/
+    display: inline-block;
+    color: var(--onPrimaryColor1);
+    text-decoration: none;
+    background-color: var(--primaryColor1);
+    border: none;
+    border-radius: 1.4rem;
+    transition: background-color 0.3s ease;
+    font-size: var(--font-small);
+    font-weight: var(--font-bold);
+    padding: 0.8rem 1.93rem;
+    box-shadow: 0 4px 8px rgba(0, 0%, 59%, 0.2);
+}
+
+.btn:hover, .btn:active {   /*Mouse over or selected*/
+    opacity: 0.9;
+}
+
+/* Nav Bar
+  ============================= */
+.header {
+    padding: var(--header-padding);
+    background-color: transparent;
+}
+
+.header__container {
+    padding: 0 1.3rem 0 1.3rem;
+    display: flex;
+    text-align: center;
+}
+
+div .logo {
+    display: inline-block;
+    padding-right: 1.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo img {
+    width: 10rem;
+}
+
+nav.header__menu {
+    text-align: center;
+    background-color: var(--surfaceColor1);
+    width: 100%; /* When displayed, menu will cover 100% of screen width */
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .5s ease-out;
+}
+
+nav.header__menu ul {
+    list-style-type: none;
+    font-size: 1.2rem;
+    padding-top: 2rem;
+    padding-left: 0;
+}
+  
+nav.header__menu ul li a {
+    display: block;                 /* Makes the whole link area clickable, not just the text*/
+    color: var(--onPrimaryColor1);
+    text-decoration: none;
+    padding-bottom: 1rem;
+}
+
+nav.header__menu a:hover,  nav.header__menu a:active {
+    color: var(--primaryColor1);
+}
+
+/* Menu hamb Icon */
+label.hamb {
+    cursor: pointer; /*  */
+    padding-top: 1rem;
+}
+
+.hamb-line {
+    background: var(--onPrimaryColor1);
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 12px;
+} /* Style span tag */
+
+.hamb-line::before,
+.hamb-line::after{
+    background: var(--onPrimaryColor1);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 200%;
+}
+
+.hamb-line::before{
+    top: 7px;
+}
+
+.hamb-line::after{
+    top: -7px;
+}
+
+input.navbar-menu {
+   display: none;
+} /* Hide checkbox */
+
+div:has(input[type="checkbox"]:checked) ~ nav {
+    max-height: 100%; /* Change nav original height from 0% */
+}
+
+/* Menu hamb Icon when checked, becomes a X */
+.navbar-menu:checked ~ .hamb .hamb-line {
+    background: transparent;
+}
+.navbar-menu:checked ~ .hamb .hamb-line::before {
+    transform: rotate(-45deg);
+    top:0;
+}
+.navbar-menu:checked ~ .hamb .hamb-line::after {
+    transform: rotate(45deg);
+    top:0;
+}
+
+/* Styles for tablet */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .hamb-line {
+        display: none;
+    }
+
+    .header {
+        padding-bottom: 20rem;
+    }
+
+    .header .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4.2rem;
+    }
+
+    nav.header__menu {
+        max-height: 3rem;
+        background-color: transparent;
+        width: 16rem;
+        position: relative;
+    }
+
+    nav.header__menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        font-size: 0.75rem;
+        column-gap: .5rem;
+    }
+  }
+
+/* Styles for desktop */
+@media only screen and (min-width: 768px) {
+    body {
+        background-image: url(./images/headphones_hero_1_j5ha93_c_scale\,w_1400.jpg);
+        height: 1130px;
+        top: -400px;
+        
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-origin: border-box;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hamb-line {
+        display: none;
+    }
+
+    .header {
+        max-width: 62.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20rem;
+    }
+
+    .header .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 4.2rem;
+    }
+
+    nav.header__menu {
+        max-height: 3rem;
+        background-color: transparent;
+        width: 16rem;
+        position: relative;
+    }
+
+    nav.header__menu ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 0;
+        padding: 0;
+        font-size: 0.75rem;
+        column-gap: .5rem;
+    }
+}
+
+/* Banner
+  ============================= */
+.banner {
+    padding: 0 1.25rem 6.6rem 1.25rem;
+    background-color: transparent;
+    min-width: 357px;
+}
+
+.banner h2 {
+    margin: 0;
+}
+
+.banner h4 {
+    margin: 0.4rem 2.75rem 0 2.75rem;
+}
+
+.banner a {
+    margin-top: 1.25rem;
+}
+
+.banner p {
+    padding: 4rem 0 0 0;
+    margin: 0;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .banner {
+        margin: 0 2.5rem;
+    }
+
+    .banner a {
+        margin-top: 2.25rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .banner {
+        max-width: 42rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .banner a {
+        margin-top: 2.25rem;
+    }
+}
+
+/* SERVICES
+  ============================= */
+.layout1 {
+    padding: 6.9rem 1.85rem;
+    min-width: 23rem;
+}
+
+.layout1 h2 {
+    margin: 0;
+}
+
+.layout1 p {
+    margin: 2.5rem 0 7rem 0;
+}
+
+.layout1 h3 {
+    margin: 1.rem 0 0.6rem 0;
+
+}
+
+.layout1 h5 {
+    margin: 0;
+}
+
+.layout1 .container {
+    row-gap: 6rem;
+    justify-content: center;
+}
+
+.layout1 .container img {
+    height: 4.8rem;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    .layout1 {
+        padding-top: 6.9rem;
+        padding-bottom: 6.9rem;
+    }
+
+    section.layout1 p {
+        margin-bottom: 6rem;
+    }
+
+    .layout1 .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: 27rem;
+        max-width: 29.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .layout1 .container div {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@media only screen and (min-width:768px) {
+
+    .layout1 .container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .layout1 .container div {
+        margin: 0;
+        padding: 0;
+        width: 25%;
+    }
+
+    .layout1 p {
+        max-width: 1000px;
+        min-width: 637px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* RESULTS
+  ============================= */
+.results.layout1 {
+    padding-top: 8rem;
+    padding-bottom: 4rem;
+    background-image: url(./images/headphones_hero_2.jpg);
+    background-repeat: no-repeat;
+}
+
+.results.layout1 p {
+    margin: 3rem auto 5rem auto;
+}
+
+.results.layout1 .container {
+    row-gap: 3rem;
+}
+
+.results.layout1 .container div {
+    height: 11rem;
+    width: 11rem;
+    background-image: url(./images/pentagone.png);
+    background-repeat: no-repeat;
+    background-size: 11rem 11rem;
+}
+
+.results.layout1 .container h1 {
+    margin-top: 3.8rem;
+    margin-bottom: .5rem;
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+
+    .results.layout1 .container {
+        max-width: 470px;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+
+    .results.layout1 .container {
+        justify-content: space-between;
+    }
+}
+
+/* CONTACT US
+  ============================= */
+.contact {
+    padding: 7rem 0 8rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 21rem;
+    min-width: 21rem;
+}
+
+.contact div {
+    font-size: var(--font-small);
+    font-weight: var(--font-semibold);
+    
+}
+
+input[type="text"], input[type="email"] {
+    border: none;
+    border-bottom: 1px ridge var(--surfaceColor1);
+    height: 2rem;
+    display: block;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.contact h2 {
+    margin: 0;
+    padding-bottom: 0.5rem;
+}
+
+.contact .btn {
+    margin-top: 3.5rem;
+}
+
+/* FOOTER
+  ============================= */
+.footer {
+    min-width: 23.5rem;
+}
+.footer .logo {
+    padding: 3rem 0 3rem 0;
+}
+
+.footer .container {
+    width: 8rem;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.footer h6 {
+    margin: 0;
+    padding: 3rem 0 2rem 0;
+}
+
+
+@media only screen and (min-width: 481px) {
+
+    .footer__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        padding: 6.8rem 0 0 0;
+        width: 86%;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer .logo {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer div.container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer h6 {
+        padding-top: 3.6rem;
+    }
+}
